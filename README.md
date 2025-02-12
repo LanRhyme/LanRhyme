@@ -34,6 +34,10 @@
 
 <p align="center">
   一位业余开发者、小动物画手
+</p>
+<p align="center">
+    <span style="color:gary;">建议切换深色模式查看</span>
+    </p>
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=LanRhyme&theme=dark&hide_border=true" />
