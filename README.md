@@ -11,6 +11,7 @@
 
 <p align="center">
     <img width="140" src="https://github.com/LanRhyme/LanRhyme/blob/main/1739341700883.png" />
+    <img width="16" src="https://github.com/LanRhyme/LanRhyme/blob/main/line.png" />
     <img width="250" src="https://github.com/LanRhyme/LanRhyme/blob/main/IMG_20250212_141640.png" />
     <h2 align="center">LanRhyme</h2>
 
@@ -43,7 +44,7 @@
 
 <p align="center">
   <img   align="center" src="https://github-readme-stats.vercel.app/api?username=LanRhyme&locale=en&line_height=32&show_icons=true&hide=&theme=dark&rank_icon=default"/>
-  |
+  <img width="16" align="center" src="https://github.com/LanRhyme/LanRhyme/blob/main/line.png" />
   <img   align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LanRhyme&locale=en&line_height=33&theme=dark&langs_count=5&layout=compact"/>
 </p>
 
