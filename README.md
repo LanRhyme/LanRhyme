@@ -8,16 +8,10 @@
     <img width="800" src="https://readme-typing-svg.demolab.com?&size=22&pause=1000&center=true&vCenter=true&random=false&width=600&lines=Welcome+to+my+GitHub+profile+page!;欢迎来到我的 GitHub 主页！&color=%FFFFFF" alt="Hello World" title="Hello World"/>
 </p>
 
-<table>
-    <tr>
-        <td><img src="
-        </td>
-    </tr>
-</table>
-
 
 <p align="center">
     <img width="140" src="https://github.com/LanRhyme/LanRhyme/blob/main/1739341700883.png" />
+    <img width="250" src="https://github.com/LanRhyme/LanRhyme/blob/main/IMG_20250212_141640.png" />
     <h2 align="center">LanRhyme</h2>
 
 
