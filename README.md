@@ -9,6 +9,11 @@
 </p>
 
 <p align="center">
+    <img width="140" src="https://github.com/LanRhyme/LanRhyme/blob/main/g8uw6i.jpg" />
+    <h2 align="center">LanRhyme</h2>
+
+
+<p align="center">
         <img
           align=center
           src="https://img.shields.io/github/stars/LanRhyme?style=flat-square&logoColor=%231677ff&labelColor=rgb(89, 89, 89)&color=%2303bb6d"
