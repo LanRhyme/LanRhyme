@@ -13,7 +13,7 @@
     <img width="140" src="https://github.com/LanRhyme/LanRhyme/blob/main/1739341700883.png" />
     <img width="16" src="https://github.com/LanRhyme/LanRhyme/blob/main/line.png" />
     <img width="250" src="https://github.com/LanRhyme/LanRhyme/blob/main/IMG_20250212_141640.png" />
-    <h2 align="center">LanRhyme</h2>
+    <h2 align="center"><span style="font-size:20;">LanRhyme</span></h2>
 
 
 
