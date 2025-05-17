@@ -11,8 +11,6 @@
 
 <p align="center">
     <img width="140" src="https://github.com/LanRhyme/LanRhyme/blob/main/1739341700883.png" />
-    <img width="16" src="https://github.com/LanRhyme/LanRhyme/blob/main/line.png" />
-    <img width="250" src="https://github.com/LanRhyme/LanRhyme/blob/main/IMG_20250212_141640.png" />
     <h2 align="center"><span style="font-size:20;">LanRhyme</span></h2>
 
 
@@ -21,11 +19,11 @@
         <img
           align=center
           src="https://img.shields.io/github/stars/LanRhyme?style=flat-square&logoColor=%231677ff&labelColor=rgb(89, 89, 89)&color=%2303bb6d"
-          style="margin: 0 5px"
+          style="margin: 0 5"
         />        <img
           align=center
-          src="https://img.shields.io/github/followers/LanRhyme?style=flat-square&logoColor=%231677ff&labelColor=rgb(89, 89, 89)&color=%2303bb6d""
-          style="margin: 0 5px"
+          src="https://img.shields.io/github/followers/LanRhyme?style=flat-square&logoColor=%231677ff&labelColor=rgb(89, 89, 89)&color=%2303bb6d"
+          style="margin: 0 5"
         />        
 |
     <a href="https://space.bilibili.com/496901387" target="_blank"><img  align=center src="https://img.shields.io/badge/BliiBili-B站-%231677ff?style=flat-square&logoColor=%231677ff&labelColor=rgb(89, 89, 89)&color=%2303bb6d"/></a>
@@ -33,7 +31,7 @@
 </p>
 
 <p align="center">
-  一位业余开发者、小动物画手
+  一位业余开发者、小画师
 </p>
 <p align="center">
     <span style="color:gary;">建议切换深色模式查看</span>
