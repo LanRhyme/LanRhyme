@@ -2,36 +2,31 @@ name: Generate Contribution Snake
 
 on:
   schedule:
-      - cron: "0 0 * * *"   # 每天 UTC 00:00 执行（香港时间约早上 8:00）
-        workflow_dispatch:      # 支持手动触发（在 Actions 页面点 Run workflow）
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
-        jobs:
-          generate:
-              runs-on: ubuntu-latest
-                  permissions:
-                        contents: write     # 允许写入 output 分支
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
-                            steps:
-                                  # 1. 检出仓库（可选，但推荐保持干净）
-                                        - name: Checkout repository
-                                                uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-                                                      # 2. 生成蛇动画 SVG（light + dark 版本）
-                                                            - name: Generate snake SVGs
-                                                                    uses: Platane/snk@v3
-                                                                            with:
-                                                                                      github_user_name: ${{ github.repository_owner }}
-                                                                                                outputs: |
-                                                                                                            dist/github-contribution-snake.svg
-                                                                                                                        dist/github-contribution-snake-dark.svg?palette=github-dark
-                                                                                                                                    # 可选：如果你想自定义颜色（偏黄绿调），可以替换 palette=github-dark 为自定义参数
-                                                                                                                                                # 示例：dist/custom-dark.svg?color_snake=8A9A70&color_dots=6B7E4F,8A9A70,E8F0D8&color_background=0d1117
+      - name: Generate snake SVGs
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-snake.svg
+            dist/github-contribution-snake-dark.svg?palette=github-dark
 
-                                                                                                                                                      # 3. 将生成的 SVG 推送到 output 分支
-                                                                                                                                                            - name: Push SVGs to output branch
-                                                                                                                                                                    uses: crazy-max/ghaction-github-pages@v4
-                                                                                                                                                                            with:
-                                                                                                                                                                                      target_branch: output
-                                                                                                                                                                                                build_dir: dist
-                                                                                                                                                                                                        env:
-                                                                                                                                                                                                                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
