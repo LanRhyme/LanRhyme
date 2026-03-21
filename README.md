@@ -78,7 +78,6 @@ An amateur developer & casual illustrator
 
 ### 🐍 Contribution Snake
 
-<img src="https://raw.githubusercontent.com/LanRhyme/LanRhyme/output/github-contribution-snake.svg" alt="snake light"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LanRhyme/LanRhyme/output/github-contribution-snake-dark.svg">
