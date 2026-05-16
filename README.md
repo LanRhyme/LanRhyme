@@ -50,25 +50,14 @@ An amateur developer & casual illustrator
 
 <!-- Stats cards -->
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=LanRhyme&show_icons=true&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&icon_color=6b7e4f&border_radius=10" width="420">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LanRhyme&layout=compact&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&langs_count=6&border_radius=10" width="320">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=LanRhyme&show_icons=true&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&icon_color=6b7e4f&border_radius=10&count_private=true" width="420">
+  
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LanRhyme&layout=compact&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&langs_count=6&border_radius=10" width="320">
 </div>
+
 
 <div align="center">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=LanRhyme&theme=gruvbox-dark&hide_border=true&background=0d1117&stroke=4a5a35&ring=8a9a70&fire=8a9a70&currStreakNum=e8f0d8&sideNums=6b7e4f&dates=e8f0d8" alt="streak"/>
-</div>
-
-<br>
-
-<!-- Skills -->
-<div align="center">
-
-### 🧰 Skills & Tools
-
-<img src="https://img.shields.io/badge/Kotlin-6B7E4F?style=flat-square&logo=kotlin&logoColor=E8F0D8&color=8A9A70&labelColor=4A5A35" alt="kotlin">
-<img src="https://img.shields.io/badge/Jetpack%20Compose-6B7E4F?style=flat-square&logo=android&logoColor=E8F0D8&color=8A9A70&labelColor=4A5A35" alt="compose">
-
 </div>
 
 <br>
