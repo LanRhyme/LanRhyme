@@ -1,0 +1,287 @@
+/* ========================================= */
+/*  网络字体引入 (俐方体 11 号)              */
+/* ========================================= */
+@font-face {
+  font-family: 'Cubic 11';
+  /* 猫猫把 cdn 换成了 fastly，网络通道更顺畅喵！(跑来跑去) */
+  src: url('https://fastly.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/web/Cubic-11.woff2') format('woff2'),
+       url('https://fastly.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/ttf/Cubic-11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========================================= */
+/*  终极像素滤镜：全局图片与图标强制像素化   */
+/* ========================================= */
+img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* ========================================= */
+/*  全新动画设置：平滑向上滑入 (Slide Up)    */
+/* ========================================= */
+@keyframes anim-slide-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes anim-slide-up-name {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(8px); }
+}
+@keyframes anim-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ========================================= */
+/*  全局变量（低饱和黄绿色调）               */
+/* ========================================= */
+.event {
+  /* 如果主人希望隐藏顶部贴边栏，把这里的 none 保留；如果希望显示，改成 flex 或 block */
+  --main-ticker-display: none; 
+  --main-message-background-color: #F9FBF2;
+  --main-message-name-background: #A3B18A;
+  --member-j-message-name-background: #8AA37B;
+  --member-t-message-name-background: #718F64;
+  --member-z-message-name-background: #587A4C;
+  --main-message-name-color: #FFFFFF;
+  --main-message-color: #3A4A29;
+  --main-font-family: 'Cubic 11', '俐方体 11 号', monospace;
+}
+
+/* ========================================= */
+/*  彻底抹除官方圆滑元素与多余图标           */
+/* ========================================= */
+/* 猫猫把 .avatar-frame 和 .avatar-wrap::after 移除啦，舰长头像框回来咯！(喵喵叫) */
+.event .pendant,
+.event .wealth-medal,
+.event-type--message .fans-medal,
+.event-type--message .fans-medal-content,
+.event-type--message .fans-medal-level,
+.event-type--message .current-rank,
+.event-type--message .mod-badge,
+.event-type--message .guard-badge,
+.event-type--message .streamer-badge,
+.reply-avatar {
+  display: none !important;
+  background-image: none !important;
+}
+
+/* ========================================= */
+/*  基础弹幕样式 (完全像素化)                */
+/* ========================================= */
+.event-type--message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: calc(100% - 48px);
+  margin-left: 48px;
+}
+
+.event-type--message .message {
+  animation: anim-slide-up 300ms ease-out forwards;
+  transform-origin: center bottom;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  color: var(--main-message-color);
+  font-family: var(--main-font-family);
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 0px; 
+  padding: 11px 12px;
+  border: 2px solid var(--main-message-name-background);
+  background: var(--main-message-background-color);
+  box-shadow: 4px 4px 0px 0px var(--main-message-name-background);
+  margin-bottom: 6px; 
+}
+.event-type--message.guard-level--3 .message { border-color: var(--member-j-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-j-message-name-background) !important; }
+.event-type--message.guard-level--2 .message { border-color: var(--member-t-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-t-message-name-background) !important; }
+.event-type--message.guard-level--1 .message { border-color: var(--member-z-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-z-message-name-background) !important; }
+
+/* 名字标题 */
+.event-type--message .meta {
+  animation: anim-slide-up-name 300ms ease-out forwards;
+  display: block;
+  position: relative;
+  transform: translateY(8px);
+  margin: 0 0 0 4px !important;
+  background-color: var(--main-message-name-background);
+  padding: 4px 8px;
+  border-radius: 0px;
+  z-index: 100;
+  border: 2px solid var(--main-message-name-background);
+}
+.event-type--message.guard-level--3 .meta { background-color: var(--member-j-message-name-background) !important; border-color: var(--member-j-message-name-background) !important; }
+.event-type--message.guard-level--2 .meta { background-color: var(--member-t-message-name-background) !important; border-color: var(--member-t-message-name-background) !important; }
+.event-type--message.guard-level--1 .meta { background-color: var(--member-z-message-name-background) !important; border-color: var(--member-z-message-name-background) !important; }
+
+/* 昵称 */
+.event-type--message .username {
+  position: relative;
+  color: var(--main-message-name-color) !important;
+  font-family: var(--main-font-family);
+  font-size: 14px !important;
+  line-height: 14px !important;
+  max-width: calc(100% - 0px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent !important;
+}
+
+/* 头像与舰长专属边框 */
+.event-type--message .avatar-wrap {
+  position: absolute;
+  left: -52px;
+  animation: anim-fade-in 300ms ease-out forwards;
+  margin-top: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 0px; 
+  box-shadow: 3px 3px 0px 0px var(--main-message-name-background);
+}
+.event-type--message .avatar-wrap:before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  border-radius: 0px !important; 
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  border: 2px solid var(--main-message-name-background);
+}
+.event-type--message .avatar-wrap.guard-level--3 { box-shadow: 3px 3px 0px 0px var(--member-j-message-name-background) !important; }
+.event-type--message .avatar-wrap.guard-level--3::before { border-color: var(--member-j-message-name-background) !important; }
+.event-type--message .avatar-wrap.guard-level--2 { box-shadow: 3px 3px 0px 0px var(--member-t-message-name-background) !important; }
+.event-type--message .avatar-wrap.guard-level--2::before { border-color: var(--member-t-message-name-background) !important; }
+.event-type--message .avatar-wrap.guard-level--1 { box-shadow: 3px 3px 0px 0px var(--member-z-message-name-background) !important; }
+.event-type--message .avatar-wrap.guard-level--1::before { border-color: var(--member-z-message-name-background) !important; }
+.event-type--message .avatar-wrap .avatar { width: 34px; height: 34px; border-radius: 0px !important; }
+
+/* ========================================= */
+/*  【终极绝杀】所有未知系统/状态消息兜底    */
+/* ========================================= */
+/* 只要不是弹幕、不是礼物、不是SC、不是大航海提示，统统强行按系统消息处理！ */
+.event:not(.event-type--message):not(.event-type--gift):not(.event-type--superchat):not(.event-type--toast) {
+  animation: anim-slide-up 300ms ease-out forwards;
+  display: block !important;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  margin: 0 auto 8px auto !important;
+  
+  border-radius: 0px !important; 
+  padding: 8px 14px !important;
+  background-image: none !important; 
+  background-color: #E8F0D6 !important; 
+  border: 2px solid var(--member-t-message-name-background) !important; 
+  box-shadow: 4px 4px 0px 0px var(--member-t-message-name-background) !important;
+  
+  color: var(--main-message-color) !important;
+  font-family: var(--main-font-family) !important;
+  font-size: 14px !important; 
+  line-height: 20px !important;
+  text-align: center !important;
+}
+
+/* 强行穿透所有子元素，拔掉它们自带的红蓝黄背景和特效！ */
+.event:not(.event-type--message):not(.event-type--gift):not(.event-type--superchat):not(.event-type--toast) * {
+  color: var(--main-message-color) !important;
+  font-family: var(--main-font-family) !important;
+  text-shadow: none !important; 
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+/* ========================================= */
+/*  舰长 / 礼物 样式                         */
+/* ========================================= */
+.event-type--toast.event-show-as--normal,
+.event-type--gift.event-show-as--normal {
+  animation: anim-slide-up 300ms ease-out forwards;
+}
+
+.event-type--toast.event-show-as--normal {
+  color: #ffffff !important;
+  font-family: var(--main-font-family);
+  font-size: 18px !important;
+  line-height: 18px !important;
+}
+.event-type--toast.event-show-as--normal.guard-level--3 { background-color: var(--member-j-message-name-background) !important; }
+.event-type--toast.event-show-as--normal.guard-level--2 { background-color: var(--member-t-message-name-background) !important; }
+.event-type--toast.event-show-as--normal.guard-level--1 { background-color: var(--member-z-message-name-background) !important; }
+
+.event-type--gift.event-show-as--normal.event-size--normal {
+  border-radius: 0px !important;
+  border: 2px solid var(--main-message-name-background);
+  box-shadow: 4px 4px 0px 0px var(--main-message-name-background);
+  margin-bottom: 8px;
+}
+.event-type--gift.event-show-as--normal .content {
+  color: #ffffff !important;
+  font-family: var(--main-font-family);
+  font-size: 16px !important;
+  line-height: 16px !important;
+}
+
+.event-type--toast.event-show-as--normal .message,
+.event-type--gift.event-show-as--normal .message {
+  font-size: 16px;
+  margin-top: 6px;
+  border-radius: 0px; 
+  padding: 7px 12px;
+  font-family: var(--main-font-family);
+  color: var(--main-message-color);
+  background-color: var(--main-message-background-color);
+  border: 2px solid var(--main-message-name-background);
+}
+
+/* ========================================= */
+/*  SC (SuperChat) 消息本体样式              */
+/* ========================================= */
+.event-type--superchat.event-show-as--normal {
+  animation: anim-slide-up 300ms ease-out forwards;
+}
+.event-type--superchat.event-show-as--normal .top { background: transparent; }
+.event-type--superchat.event-show-as--normal .top .avatar-wrap,
+.event-type--superchat.event-show-as--normal .top .avatar { width: 24px; height: 24px; border-radius: 0px; }
+.event-type--superchat.event-show-as--normal .top .meta { display: flex; color: #ffffff !important; font-family: var(--main-font-family); font-size: 16px !important; line-height: 16px !important; }
+.event-type--superchat.event-show-as--normal .top .meta .price { margin-left: 12px; }
+
+/* 猫猫绝招：把 SC 里面潜伏的圆角和背景色全部挠掉！(挥舞爪子) */
+.event-type--superchat.event-show-as--normal .message,
+.event-type--superchat.event-show-as--normal .bottom { 
+  background: transparent !important; 
+  background-color: transparent !important;
+  border-radius: 0px !important;
+}
+
+.event-type--superchat.event-show-as--normal .message .message-text,
+.event-type--superchat.event-show-as--normal .message .message-translation {
+  font-size: 16px; margin-top: 6px; border-radius: 0px !important; padding: 7px 12px; font-family: var(--main-font-family);
+  color: var(--main-message-color); background-color: var(--main-message-background-color); border: 2px solid currentColor;
+}
+
+/* ========================================= */
+/*  顶部标签(Ticker)与 SC 颜色全局暴力拦截   */
+/* ========================================= */
+[class*="price-rank--1"] { background-color: #DDE5B6 !important; border-radius: 0px !important; border: 2px solid #A3B18A !important; box-shadow: 4px 4px 0 0 #A3B18A !important; }
+[class*="price-rank--2"] { background-color: #D4E09B !important; border-radius: 0px !important; border: 2px solid #92A671 !important; box-shadow: 4px 4px 0 0 #92A671 !important; }
+[class*="price-rank--3"] { background-color: #C6D87D !important; border-radius: 0px !important; border: 2px solid #819A59 !important; box-shadow: 4px 4px 0 0 #819A59 !important; }
+[class*="price-rank--4"] { background-color: #B5C95E !important; border-radius: 0px !important; border: 2px solid #6C8442 !important; box-shadow: 4px 4px 0 0 #6C8442 !important; }
+[class*="price-rank--5"] { background-color: #A4B844 !important; border-radius: 0px !important; border: 2px solid #59702F !important; box-shadow: 4px 4px 0 0 #59702F !important; }
+[class*="price-rank--6"] { background-color: #90A431 !important; border-radius: 0px !important; border: 2px solid #475C21 !important; box-shadow: 4px 4px 0 0 #475C21 !important; }
+
+/* 强制让这些标签里的字体颜色也服从护眼色 */
+[class*="price-rank--"] * {
+  color: var(--main-message-color) !important;
+  background-image: none !important;
+}
