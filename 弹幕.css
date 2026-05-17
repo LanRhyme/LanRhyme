@@ -3,11 +3,13 @@
 /* ========================================= */
 @font-face {
   font-family: 'Cubic 11';
-  /* 猫猫把 cdn 换成了 fastly，网络通道更顺畅喵！(跑来跑去) */
-  src: url('https://fastly.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/web/Cubic-11.woff2') format('woff2'),
-       url('https://fastly.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/ttf/Cubic-11.ttf') format('truetype');
+  src: local('Cubic 11'), 
+       local('俐方體11號'),
+       url('https://gcore.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/web/Cubic-11.woff2') format('woff2'),
+       url('https://testingcf.jsdelivr.net/gh/AChong1314/Cubic-11@master/fonts/web/Cubic-11.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap; 
 }
 
 /* ========================================= */
@@ -38,10 +40,9 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
 }
 
 /* ========================================= */
-/*  全局变量（低饱和黄绿色调）               */
+/*  全局变量（低饱和黄绿色调，明亮护眼喵！） */
 /* ========================================= */
 .event {
-  /* 如果主人希望隐藏顶部贴边栏，把这里的 none 保留；如果希望显示，改成 flex 或 block */
   --main-ticker-display: none; 
   --main-message-background-color: #F9FBF2;
   --main-message-name-background: #A3B18A;
@@ -51,12 +52,16 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
   --main-message-name-color: #FFFFFF;
   --main-message-color: #3A4A29;
   --main-font-family: 'Cubic 11', '俐方体 11 号', monospace;
+  
+  /* 猫猫新增：主播专属淡金色魔法变量 */
+  --streamer-message-bg: #FFF9E6; 
+  --streamer-message-border: #E6C280;
+  --streamer-message-color: #664D1A;
 }
 
 /* ========================================= */
 /*  彻底抹除官方圆滑元素与多余图标           */
 /* ========================================= */
-/* 猫猫把 .avatar-frame 和 .avatar-wrap::after 移除啦，舰长头像框回来咯！(喵喵叫) */
 .event .pendant,
 .event .wealth-medal,
 .event-type--message .fans-medal,
@@ -72,16 +77,120 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
 }
 
 /* ========================================= */
-/*  基础弹幕样式 (完全像素化)                */
+/*  猫猫核心魔法结构：普通弹幕与特殊消息分离 */
 /* ========================================= */
+
+/* 1. 普通弹幕保持左对齐，留出头像位置 */
 .event-type--message {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-  max-width: calc(100% - 48px);
-  margin-left: 48px;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: fit-content !important;
+  max-width: calc(100% - 64px) !important;
+  margin-left: 64px !important;
+  margin-bottom: 8px !important;
+  border: 2px solid transparent !important; 
+  box-sizing: content-box !important;
 }
+
+/* 2. 特殊消息(舰长、礼物、SC) 改为全局居中排布 */
+.event-type--toast.event-show-as--normal,
+.event-type--gift.event-show-as--normal,
+.event-type--superchat.event-show-as--normal {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* 内容居中 */
+  width: fit-content !important;
+  max-width: 90% !important;
+  margin: 0 auto 12px auto !important; /* 卡片整体居中 */
+  border: 2px solid transparent !important; 
+  box-sizing: content-box !important;
+}
+
+/* ========================================= */
+/*  头像坐标系 (分开管理，精准定位喵)        */
+/* ========================================= */
+
+/* 所有头像的基础方块和边框样式 */
+.event-type--message .avatar-wrap,
+.event-type--toast.event-show-as--normal .avatar-wrap,
+.event-type--gift.event-show-as--normal .avatar-wrap,
+.event-type--superchat.event-show-as--normal .avatar-wrap {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 0px !important;
+  box-shadow: 3px 3px 0px 0px var(--main-message-name-background) !important;
+  background-color: #fff;
+  z-index: 100;
+}
+
+/* 头像伪元素（边框）全局统一 */
+.event-type--message .avatar-wrap:before,
+.event-type--toast.event-show-as--normal .avatar-wrap:before,
+.event-type--gift.event-show-as--normal .avatar-wrap:before,
+.event-type--superchat.event-show-as--normal .avatar-wrap:before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  border-radius: 0px !important;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  border: 2px solid var(--main-message-name-background) !important;
+}
+
+/* 内部图片统一 */
+.event .avatar-wrap .avatar {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 0px !important;
+}
+
+/* --- 普通弹幕头像：继续悬浮在左侧 --- */
+.event-type--message .avatar-wrap {
+  position: absolute !important;
+  left: -56px !important;
+  top: 12px !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* --- 礼物和舰长消息头像：融进卡片内部居中 --- */
+.event-type--toast.event-show-as--normal .avatar-wrap,
+.event-type--gift.event-show-as--normal .avatar-wrap {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 auto 12px auto !important; 
+  transform: none !important;
+}
+
+/* --- SC 消息头像：横向排布，移除底部外边距，改为右侧外边距 --- */
+.event-type--superchat.event-show-as--normal .avatar-wrap {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 16px 0 0 !important; 
+  transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* 舰长与主播专属头像框颜色 */
+.event.guard-level--3 .avatar-wrap { box-shadow: 3px 3px 0px 0px var(--member-j-message-name-background) !important; }
+.event.guard-level--3 .avatar-wrap::before { border-color: var(--member-j-message-name-background) !important; }
+.event.guard-level--2 .avatar-wrap { box-shadow: 3px 3px 0px 0px var(--member-t-message-name-background) !important; }
+.event.guard-level--2 .avatar-wrap::before { border-color: var(--member-t-message-name-background) !important; }
+.event.guard-level--1 .avatar-wrap { box-shadow: 3px 3px 0px 0px var(--member-z-message-name-background) !important; }
+.event.guard-level--1 .avatar-wrap::before { border-color: var(--member-z-message-name-background) !important; }
+/* 主播弹幕的头像框同步改成金闪闪 */
+.event.is-streamer .avatar-wrap, .event.streamer .avatar-wrap { box-shadow: 3px 3px 0px 0px var(--streamer-message-border) !important; }
+.event.is-streamer .avatar-wrap::before, .event.streamer .avatar-wrap::before { border-color: var(--streamer-message-border) !important; }
+
+/* ========================================= */
+/*  基础弹幕样式 (普通消息)                  */
+/* ========================================= */
+.event-type--message { padding: 0 !important; }
 
 .event-type--message .message {
   animation: anim-slide-up 300ms ease-out forwards;
@@ -92,20 +201,27 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
   max-width: 100%;
   color: var(--main-message-color);
   font-family: var(--main-font-family);
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 24px;
   border-radius: 0px; 
   padding: 11px 12px;
   border: 2px solid var(--main-message-name-background);
   background: var(--main-message-background-color);
   box-shadow: 4px 4px 0px 0px var(--main-message-name-background);
-  margin-bottom: 6px; 
+  margin-bottom: 0px; 
 }
 .event-type--message.guard-level--3 .message { border-color: var(--member-j-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-j-message-name-background) !important; }
 .event-type--message.guard-level--2 .message { border-color: var(--member-t-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-t-message-name-background) !important; }
 .event-type--message.guard-level--1 .message { border-color: var(--member-z-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-z-message-name-background) !important; }
 
-/* 名字标题 */
+/* 主播专属消息气泡变淡金色 ✨ */
+.event-type--message.is-streamer .message, .event-type--message.streamer .message {
+  background: var(--streamer-message-bg) !important;
+  border-color: var(--streamer-message-border) !important;
+  box-shadow: 4px 4px 0px 0px var(--streamer-message-border) !important;
+  color: var(--streamer-message-color) !important;
+}
+
 .event-type--message .meta {
   animation: anim-slide-up-name 300ms ease-out forwards;
   display: block;
@@ -122,75 +238,46 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
 .event-type--message.guard-level--2 .meta { background-color: var(--member-t-message-name-background) !important; border-color: var(--member-t-message-name-background) !important; }
 .event-type--message.guard-level--1 .meta { background-color: var(--member-z-message-name-background) !important; border-color: var(--member-z-message-name-background) !important; }
 
-/* 昵称 */
+/* 主播专属名字标签变深金色 👑 */
+.event-type--message.is-streamer .meta, .event-type--message.streamer .meta {
+  background-color: var(--streamer-message-border) !important;
+  border-color: var(--streamer-message-border) !important;
+}
+
 .event-type--message .username {
   position: relative;
   color: var(--main-message-name-color) !important;
   font-family: var(--main-font-family);
   font-size: 14px !important;
   line-height: 14px !important;
-  max-width: calc(100% - 0px);
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: transparent !important;
 }
 
-/* 头像与舰长专属边框 */
-.event-type--message .avatar-wrap {
-  position: absolute;
-  left: -52px;
-  animation: anim-fade-in 300ms ease-out forwards;
-  margin-top: 12px;
-  width: 34px;
-  height: 34px;
-  border-radius: 0px; 
-  box-shadow: 3px 3px 0px 0px var(--main-message-name-background);
-}
-.event-type--message .avatar-wrap:before {
-  content: '';
-  width: 38px;
-  height: 38px;
-  border-radius: 0px !important; 
-  position: absolute;
-  left: -4px;
-  top: -4px;
-  border: 2px solid var(--main-message-name-background);
-}
-.event-type--message .avatar-wrap.guard-level--3 { box-shadow: 3px 3px 0px 0px var(--member-j-message-name-background) !important; }
-.event-type--message .avatar-wrap.guard-level--3::before { border-color: var(--member-j-message-name-background) !important; }
-.event-type--message .avatar-wrap.guard-level--2 { box-shadow: 3px 3px 0px 0px var(--member-t-message-name-background) !important; }
-.event-type--message .avatar-wrap.guard-level--2::before { border-color: var(--member-t-message-name-background) !important; }
-.event-type--message .avatar-wrap.guard-level--1 { box-shadow: 3px 3px 0px 0px var(--member-z-message-name-background) !important; }
-.event-type--message .avatar-wrap.guard-level--1::before { border-color: var(--member-z-message-name-background) !important; }
-.event-type--message .avatar-wrap .avatar { width: 34px; height: 34px; border-radius: 0px !important; }
-
 /* ========================================= */
 /*  【终极绝杀】所有未知系统/状态消息兜底    */
 /* ========================================= */
-/* 只要不是弹幕、不是礼物、不是SC、不是大航海提示，统统强行按系统消息处理！ */
 .event:not(.event-type--message):not(.event-type--gift):not(.event-type--superchat):not(.event-type--toast) {
   animation: anim-slide-up 300ms ease-out forwards;
   display: block !important;
   width: fit-content;
   max-width: calc(100% - 20px);
   margin: 0 auto 8px auto !important;
-  
   border-radius: 0px !important; 
   padding: 8px 14px !important;
   background-image: none !important; 
   background-color: #E8F0D6 !important; 
   border: 2px solid var(--member-t-message-name-background) !important; 
   box-shadow: 4px 4px 0px 0px var(--member-t-message-name-background) !important;
-  
   color: var(--main-message-color) !important;
   font-family: var(--main-font-family) !important;
   font-size: 14px !important; 
   line-height: 20px !important;
   text-align: center !important;
 }
-
-/* 强行穿透所有子元素，拔掉它们自带的红蓝黄背景和特效！ */
 .event:not(.event-type--message):not(.event-type--gift):not(.event-type--superchat):not(.event-type--toast) * {
   color: var(--main-message-color) !important;
   font-family: var(--main-font-family) !important;
@@ -202,72 +289,112 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
 }
 
 /* ========================================= */
-/*  舰长 / 礼物 样式                         */
+/*  舰长 / 礼物 样式 (已居中)                */
 /* ========================================= */
 .event-type--toast.event-show-as--normal,
 .event-type--gift.event-show-as--normal {
-  animation: anim-slide-up 300ms ease-out forwards;
+  padding: 16px 20px !important; 
+  text-align: center !important;
+  background-color: var(--main-message-background-color);
+  border-color: var(--main-message-name-background) !important;
+  box-shadow: 4px 4px 0px 0px var(--main-message-name-background);
 }
 
 .event-type--toast.event-show-as--normal {
   color: #ffffff !important;
   font-family: var(--main-font-family);
   font-size: 18px !important;
-  line-height: 18px !important;
+  line-height: 22px !important;
+  word-break: break-all;
 }
-.event-type--toast.event-show-as--normal.guard-level--3 { background-color: var(--member-j-message-name-background) !important; }
-.event-type--toast.event-show-as--normal.guard-level--2 { background-color: var(--member-t-message-name-background) !important; }
-.event-type--toast.event-show-as--normal.guard-level--1 { background-color: var(--member-z-message-name-background) !important; }
+.event-type--toast.event-show-as--normal.guard-level--3 { background-color: var(--member-j-message-name-background) !important; border-color: var(--member-j-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-j-message-name-background) !important; }
+.event-type--toast.event-show-as--normal.guard-level--2 { background-color: var(--member-t-message-name-background) !important; border-color: var(--member-t-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-t-message-name-background) !important; }
+.event-type--toast.event-show-as--normal.guard-level--1 { background-color: var(--member-z-message-name-background) !important; border-color: var(--member-z-message-name-background) !important; box-shadow: 4px 4px 0px 0px var(--member-z-message-name-background) !important; }
 
-.event-type--gift.event-show-as--normal.event-size--normal {
-  border-radius: 0px !important;
-  border: 2px solid var(--main-message-name-background);
-  box-shadow: 4px 4px 0px 0px var(--main-message-name-background);
-  margin-bottom: 8px;
+.event-type--gift.event-show-as--normal {
+  background-color: var(--main-message-background-color) !important;
+}
+.event-type--gift.event-show-as--normal .content,
+.event-type--toast.event-show-as--normal .content {
+  margin: 0 !important;
+  padding: 0 !important;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .event-type--gift.event-show-as--normal .content {
-  color: #ffffff !important;
+  color: var(--main-message-color) !important;
   font-family: var(--main-font-family);
   font-size: 16px !important;
-  line-height: 16px !important;
+  line-height: 20px !important;
 }
 
 .event-type--toast.event-show-as--normal .message,
 .event-type--gift.event-show-as--normal .message {
-  font-size: 16px;
-  margin-top: 6px;
-  border-radius: 0px; 
-  padding: 7px 12px;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  margin: 12px 0 0 0 !important;
+  border-radius: 0px !important; 
+  padding: 8px 12px !important;
   font-family: var(--main-font-family);
-  color: var(--main-message-color);
-  background-color: var(--main-message-background-color);
-  border: 2px solid var(--main-message-name-background);
+  color: var(--main-message-color) !important;
+  background-color: var(--main-message-background-color) !important;
+  border: 2px solid currentColor !important;
 }
 
 /* ========================================= */
-/*  SC (SuperChat) 消息本体样式              */
+/*  SC (SuperChat) 消息本体样式 (横向排布版)   */
 /* ========================================= */
 .event-type--superchat.event-show-as--normal {
-  animation: anim-slide-up 300ms ease-out forwards;
+  padding: 0 !important; 
 }
-.event-type--superchat.event-show-as--normal .top { background: transparent; }
-.event-type--superchat.event-show-as--normal .top .avatar-wrap,
-.event-type--superchat.event-show-as--normal .top .avatar { width: 24px; height: 24px; border-radius: 0px; }
-.event-type--superchat.event-show-as--normal .top .meta { display: flex; color: #ffffff !important; font-family: var(--main-font-family); font-size: 16px !important; line-height: 16px !important; }
-.event-type--superchat.event-show-as--normal .top .meta .price { margin-left: 12px; }
+.event-type--superchat.event-show-as--normal .top { 
+  display: flex !important;
+  flex-direction: row !important; /* 核心魔法：改回横向一整排！ */
+  align-items: center !important; /* 垂直居中对齐 */
+  justify-content: flex-start !important;
+  position: static !important;
+  padding: 16px 16px 12px 16px !important;
+  background: transparent !important; 
+}
+.event-type--superchat.event-show-as--normal .top .meta { 
+  display: flex !important; 
+  flex-direction: row !important; /* 核心魔法：名字和金额也横着排！ */
+  align-items: center !important;
+  flex-wrap: wrap !important; /* 防止名字太长挤爆卡片，允许合理换行 */
+  color: var(--main-message-color) !important; 
+  font-family: var(--main-font-family); 
+  font-size: 16px !important; 
+  line-height: 20px !important; 
+}
+.event-type--superchat.event-show-as--normal .top .meta .username {
+  margin-right: 8px !important; /* 名字后面留一点距离给金额喵 */
+}
+.event-type--superchat.event-show-as--normal .top .meta .price { 
+  margin: 0 !important; /* 抹除原本的顶部间距 */
+  font-weight: bold;
+}
 
-/* 猫猫绝招：把 SC 里面潜伏的圆角和背景色全部挠掉！(挥舞爪子) */
 .event-type--superchat.event-show-as--normal .message,
 .event-type--superchat.event-show-as--normal .bottom { 
-  background: transparent !important; 
-  background-color: transparent !important;
+  background-color: var(--main-message-background-color) !important; 
   border-radius: 0px !important;
+  padding: 12px 16px !important;
+  margin: 0 !important;
+  text-align: left !important; /* 横向排布下，留言文字靠左会更协调哦 */
+  border-top: 2px solid var(--main-message-color) !important; 
 }
-
 .event-type--superchat.event-show-as--normal .message .message-text,
 .event-type--superchat.event-show-as--normal .message .message-translation {
-  font-size: 16px; margin-top: 6px; border-radius: 0px !important; padding: 7px 12px; font-family: var(--main-font-family);
-  color: var(--main-message-color); background-color: var(--main-message-background-color); border: 2px solid currentColor;
+  font-size: 20px !important; 
+  line-height: 24px !important;
+  font-family: var(--main-font-family);
+  color: var(--main-message-color) !important; 
+  background: transparent !important; 
+  border: none !important; 
+  padding: 0 !important; 
+  margin: 0 !important;
 }
 
 /* ========================================= */
@@ -279,9 +406,4 @@ img, .avatar, canvas, .emoji, .icon, .fans-medal-icon {
 [class*="price-rank--4"] { background-color: #B5C95E !important; border-radius: 0px !important; border: 2px solid #6C8442 !important; box-shadow: 4px 4px 0 0 #6C8442 !important; }
 [class*="price-rank--5"] { background-color: #A4B844 !important; border-radius: 0px !important; border: 2px solid #59702F !important; box-shadow: 4px 4px 0 0 #59702F !important; }
 [class*="price-rank--6"] { background-color: #90A431 !important; border-radius: 0px !important; border: 2px solid #475C21 !important; box-shadow: 4px 4px 0 0 #475C21 !important; }
-
-/* 强制让这些标签里的字体颜色也服从护眼色 */
-[class*="price-rank--"] * {
-  color: var(--main-message-color) !important;
-  background-image: none !important;
-}
+[class*="price-rank--"] * { background-image: none !important; }
