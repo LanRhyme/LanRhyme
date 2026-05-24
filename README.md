@@ -3,10 +3,6 @@
 <!-- Top banner: capsule-render rect + slice combination for simple line/stripe style -->
 <img src="https://capsule-render.vercel.app/api?type=slice&height=80&section=header&text=&color=0:8A9A70,100:6B7E4F&animation=fadeIn" alt="top line"/>
 
-<div style="position: relative; margin: -40px 0 -20px 0;">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=100&section=header&text=LanRhyme&fontSize=45&fontAlignY=55&color=00000000&fontColor=8A9A70&animation=fadeIn&fontAlign=50" alt="LanRhyme Title"/>
-</div>
-
 <br>
 
 <!-- Very thin subtle divider -->
@@ -20,8 +16,7 @@
 
 An amateur developer & casual illustrator
 
-- 🛠️ Focus: Android / Kotlin / Compose
-- 🔊 Notable project: MicYou (turn your Android phone into a wireless microphone)
+- 🛠️ Focus: Kotlin / Compose
 - 🎮 Always tinkering with: Minecraft
 - 🌾 From: China
 
