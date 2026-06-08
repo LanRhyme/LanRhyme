@@ -89,6 +89,13 @@
 
 <br>
 
+<details>
+  
+<summary style="cursor: pointer">More details...</summary>
+
+![Metrics](/github-metrics.svg)
+</details>
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=slice&height=60&section=footer&text=&color=0:6B7E4F,100:8A9A70&animation=fadeIn" alt="footer line"/>
