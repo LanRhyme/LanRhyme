@@ -75,12 +75,6 @@ jobs:
           plugin_stargazers_charts_type: classic
           plugin_stargazers_days: 14
           
-          # 1. 成就系统（展示获得的 GitHub 成就徽章，如 Pull Shark、Starstruck 等）
-          plugin_achievements: yes
-          plugin_achievements_threshold: C     # 只显示 C 级以上成就（可改成 B 或 S）
-          plugin_achievements_limit: 10        # 最多显示 10 枚成就
-          plugin_achievements_display: compact # 紧凑式显示，节省空间
-          
           plugin_topics: yes
           plugin_topics_limit: 8               # 显示最多 8 个热门话题
           plugin_topics_sort: stars            # 按仓库 star 数排序话题
