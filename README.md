@@ -7,7 +7,7 @@
 <h3 align="center">Hi there, I'm <a href="https://github.com/LanRhyme">LanRhyme</a> 👋</h3>
 
 <p align="center">
-  <em>An amateur developer & casual illustrator · 今天转瞬即逝，而又永恒</em>
+  <em>An amateur developer & casual illustrator</em>
 </p>
 
 <br>
