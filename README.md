@@ -46,7 +46,7 @@
 <div align="center">
 
 <a href="https://www.jetbrains.com/idea"><img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IDEA"></a>
-<a href="https://www.jetbrains.com/androidstudio"><img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white" alt="Android Studio"></a>
+<a href="https://developer.android.com/studio"><img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white" alt="Android Studio"></a>
 <a href="https://code.visualstudio.com"><img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code"></a>
 <a href="https://git-scm.com"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
 <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
@@ -67,7 +67,7 @@
 
 <br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=LanRhyme&theme=gruvbox-dark&hide_border=true&background=0d1117&stroke=4a5a35&ring=8a9a70&fire=8a9a70&currStreakNum=e8f0d8&sideNums=6b7e4f&dates=e8f0d8&border_radius=12" alt="streak"/>
+<img src="https://streak-stats.demolab.com/?user=LanRhyme&theme=gruvbox-dark&hide_border=true&background=0d1117&stroke=4a5a35&ring=8a9a70&fire=8a9a70&currStreakNum=e8f0d8&sideNums=6b7e4f&dates=e8f0d8&border_radius=12" alt="streak"/>
 
 </div>
 
@@ -93,7 +93,7 @@
   
 <summary style="cursor: pointer">More details...</summary>
 
-![Metrics](/github-metrics.svg)
+![Metrics](./github-metrics.svg)
 </details>
 
 <div align="center">
