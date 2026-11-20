@@ -104,6 +104,9 @@ query ($login: String!, $from: DateTime!, $to: DateTime!) {
     contributionsCollection(from: $from, to: $to) {
       totalCommitContributions
       restrictedContributionsCount
+      contributionCalendar {
+        weeks { contributionDays { date contributionCount } }
+      }
     }
   }
 }
@@ -147,6 +150,57 @@ def search_total(query):
     return _http(url).get("total_count", 0)
 
 
+def streak_stats(day_counts, created, today):
+    """按贡献日历算总贡献、当前连续天数与历史最长连续天数"""
+    days = {datetime.date.fromisoformat(k): v for k, v in day_counts.items()}
+    one_day = datetime.timedelta(days=1)
+
+    total = sum(days.values())
+
+    end = today if days.get(today, 0) > 0 else today - one_day
+    start = end
+    while days.get(start, 0) > 0:
+        start -= one_day
+    current_start = start + one_day
+    current = {
+        "length": max((end - current_start).days + 1, 0),
+        "start": current_start.isoformat(),
+        "end": end.isoformat(),
+    }
+
+    longest = {"length": 0, "start": today.isoformat(), "end": today.isoformat()}
+    run_start = None
+    previous = None
+    for day in sorted(days):
+        if days[day] <= 0:
+            run_start = None
+            previous = None
+            continue
+        if run_start is None or previous is None or day - previous > one_day:
+            run_start = day
+        run_length = (day - run_start).days + 1
+        if run_length > longest["length"]:
+            longest = {"length": run_length, "start": run_start.isoformat(), "end": day.isoformat()}
+        previous = day
+    if current["length"] > longest["length"] and current["length"] > 0:
+        longest = dict(current)
+
+    return {"total": total, "since": created.isoformat(),
+            "current": current, "longest": longest}
+
+
+def fmt_range(start_iso, end_iso, none_text="—"):
+    if not start_iso or not end_iso:
+        return none_text
+    start = datetime.date.fromisoformat(start_iso)
+    end = datetime.date.fromisoformat(end_iso)
+    if start > end:
+        return none_text
+    if start.year == end.year:
+        return f"{start.strftime('%b')} {start.day} - {end.strftime('%b')} {end.day}"
+    return f"{start.strftime('%b')} {start.day}, {start.year} - {end.strftime('%b')} {end.day}, {end.year}"
+
+
 def collect():
     profile = gql(LANG_QUERY, {"login": LOGIN})["user"]
     repos = list(profile["repositories"]["nodes"])
@@ -172,6 +226,7 @@ def collect():
     created = datetime.datetime.fromisoformat(profile["createdAt"].replace("Z", "+00:00"))
     now = datetime.datetime.now(datetime.timezone.utc)
     commits = 0
+    day_counts = {}
     for year in range(created.year, now.year + 1):
         start = datetime.datetime(year, 1, 1, tzinfo=datetime.timezone.utc)
         end = min(datetime.datetime(year, 12, 31, 23, 59, 59, tzinfo=datetime.timezone.utc), now)
@@ -183,6 +238,9 @@ def collect():
             "to": end.isoformat().replace("+00:00", "Z"),
         })["user"]["contributionsCollection"]
         commits += collection["totalCommitContributions"] + collection["restrictedContributionsCount"]
+        for week in collection["contributionCalendar"]["weeks"]:
+            for day in week["contributionDays"]:
+                day_counts[day["date"]] = day["contributionCount"]
 
     prs = search_total(f"author:{LOGIN} type:pr")
     issues = search_total(f"author:{LOGIN} type:issue")
@@ -197,6 +255,7 @@ def collect():
         "issues": issues,
         "contributed": profile["repositoriesContributedTo"]["totalCount"],
         "languages": sorted(languages.items(), key=lambda kv: (-kv[1]["size"], kv[0].lower())),
+        "streak": streak_stats(day_counts, created.date(), now.date()),
     }
 
 
@@ -270,6 +329,36 @@ def render_langs(data, limit=6):
     return "".join(out)
 
 
+def render_streak(data):
+    streak = data["streak"]
+    since = datetime.date.fromisoformat(streak["since"])
+    columns = [
+        ("Total Contributions", f'{streak["total"]:,}',
+         f"Since {since.strftime('%b')} {since.day}, {since.year}"),
+        ("Current Streak", f'{streak["current"]["length"]:,}',
+         fmt_range(streak["current"]["start"], streak["current"]["end"])),
+        ("Longest Streak", f'{streak["longest"]["length"]:,}',
+         fmt_range(streak["longest"]["start"], streak["longest"]["end"])),
+    ]
+    title = "Contribution Streak"
+    out = [svg_open(title, CARD_H)]
+    out.append(text(PAD, 35, title, size=18, weight=600, fill=TITLE))
+    out.append(f'  <line x1="{PAD}" y1="48" x2="{CARD_W - PAD}" y2="48" stroke="{RING}" '
+               f'stroke-opacity="0.5" stroke-width="1"/>\n')
+    span = (CARD_W - 2 * PAD) / len(columns)
+    for index, (label, value, dates) in enumerate(columns):
+        center = PAD + span * index + span / 2
+        if index:
+            x = PAD + span * index
+            out.append(f'  <line x1="{x:.1f}" y1="62" x2="{x:.1f}" y2="152" stroke="{RING}" '
+                       f'stroke-opacity="0.5" stroke-width="1"/>\n')
+        out.append(text(center, 108, value, size=28, weight=700, fill=TITLE, anchor="middle"))
+        out.append(text(center, 132, label, size=13, weight=600, anchor="middle"))
+        out.append(text(center, 152, dates, size=10.5, anchor="middle", opacity=0.65))
+    out.append("</svg>\n")
+    return "".join(out)
+
+
 def main():
     if not TOKEN:
         raise SystemExit("缺少 GITHUB_TOKEN")
@@ -277,6 +366,7 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "stats.svg").write_text(render_stats(data), encoding="utf-8")
     (OUT_DIR / "top-langs.svg").write_text(render_langs(data), encoding="utf-8")
+    (OUT_DIR / "streak.svg").write_text(render_streak(data), encoding="utf-8")
     summary = {k: v for k, v in data.items() if k != "languages"}
     summary["languages"] = [(n, m["size"]) for n, m in data["languages"][:6]]
     print(json.dumps(summary, ensure_ascii=False, indent=2))

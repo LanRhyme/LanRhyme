@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg assets/top-langs.svg
+          git add assets/stats.svg assets/top-langs.svg assets/streak.svg
           if git diff --cached --quiet; then
             echo "卡片无变化，跳过提交"
             exit 0

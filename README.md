@@ -66,7 +66,7 @@
 
 <br>
 
-<img src="https://github-readme-streak-stats-eight-theta.vercel.app/?user=LanRhyme&theme=gruvbox-dark&hide_border=true&background=0d1117&stroke=4a5a35&ring=8a9a70&fire=8a9a70&currStreakNum=e8f0d8&sideNums=6b7e4f&dates=e8f0d8&border_radius=12" alt="streak"/>
+<img src="./assets/streak.svg" height="170" alt="Streak">
 
 </div>
 

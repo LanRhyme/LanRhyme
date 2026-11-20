@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="467" height="195" viewBox="0 0 467 195" fill="none" role="img" aria-label="Contribution Streak">
+  <title>Contribution Streak</title>
+  <rect x="0.5" y="0.5" width="466" height="194" rx="12" ry="12" fill="#0d1117" stroke="#4a5a35" stroke-opacity="0.35"/>
+  <text x="25" y="35" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="18" font-weight="600" fill="#8a9a70">Contribution Streak</text>
+  <line x1="25" y1="48" x2="442" y2="48" stroke="#4a5a35" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="94.5" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="28" font-weight="700" fill="#8a9a70" text-anchor="middle">6,476</text>
+  <text x="94.5" y="132" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="middle">Total Contributions</text>
+  <text x="94.5" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="10.5" font-weight="400" fill="#e8f0d8" fill-opacity="0.65" text-anchor="middle">Since Sep 14, 2022</text>
+  <line x1="164.0" y1="62" x2="164.0" y2="152" stroke="#4a5a35" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="233.5" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="28" font-weight="700" fill="#8a9a70" text-anchor="middle">147</text>
+  <text x="233.5" y="132" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="middle">Current Streak</text>
+  <text x="233.5" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="10.5" font-weight="400" fill="#e8f0d8" fill-opacity="0.65" text-anchor="middle">Jun 27 - Nov 20</text>
+  <line x1="303.0" y1="62" x2="303.0" y2="152" stroke="#4a5a35" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="372.5" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="28" font-weight="700" fill="#8a9a70" text-anchor="middle">147</text>
+  <text x="372.5" y="132" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="middle">Longest Streak</text>
+  <text x="372.5" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="10.5" font-weight="400" fill="#e8f0d8" fill-opacity="0.65" text-anchor="middle">Jun 27 - Nov 20</text>
+</svg>
