@@ -66,7 +66,7 @@
 
 <br>
 
-<img src="./assets/streak.svg" height="170" alt="Streak">
+<img src="./assets/streak.svg" alt="streak"/>
 
 </div>
 

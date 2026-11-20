@@ -1,24 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="467" height="195" viewBox="0 0 467 195" fill="none" role="img" aria-label="Most Used Languages">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="165" viewBox="0 0 300 165" fill="none" role="img" aria-label="Most Used Languages">
   <title>Most Used Languages</title>
-  <rect x="0.5" y="0.5" width="466" height="194" rx="12" ry="12" fill="#0d1117" stroke="#4a5a35" stroke-opacity="0.35"/>
-  <text x="25" y="35" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="18" font-weight="600" fill="#8a9a70">Most Used Languages</text>
-  <line x1="25" y1="48" x2="442" y2="48" stroke="#4a5a35" stroke-opacity="0.5" stroke-width="1"/>
-  <circle cx="30" cy="68" r="5" fill="#A97BFF"/>
-  <text x="45" y="72" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Kotlin</text>
-  <text x="442" y="72" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">60.66%</text>
-  <circle cx="30" cy="91" r="5" fill="#3572A5"/>
-  <text x="45" y="95" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Python</text>
-  <text x="442" y="95" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">10.10%</text>
-  <circle cx="30" cy="114" r="5" fill="#f34b7d"/>
-  <text x="45" y="118" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">C++</text>
-  <text x="442" y="118" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">8.45%</text>
-  <circle cx="30" cy="137" r="5" fill="#3178c6"/>
-  <text x="45" y="141" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">TypeScript</text>
-  <text x="442" y="141" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">4.23%</text>
-  <circle cx="30" cy="160" r="5" fill="#41b883"/>
-  <text x="45" y="164" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Vue</text>
-  <text x="442" y="164" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">3.83%</text>
-  <circle cx="30" cy="183" r="5" fill="#00B4AB"/>
-  <text x="45" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Dart</text>
-  <text x="442" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">2.57%</text>
+  <rect x="0.5" y="0.5" rx="12" width="299" height="163" fill="#0d1117" stroke="#e4e2e2" stroke-opacity="0"/>
+  <g transform="translate(25, 35)">
+    <text x="0" y="0" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="18" font-weight="600" fill="#8a9a70">Most Used Languages</text>
+  </g>
+  <g transform="translate(0, 55)">
+    <mask id="rect-mask">
+      <rect x="0" y="0" width="250" height="8" fill="white" rx="5"/>
+    </mask>
+    <rect mask="url(#rect-mask)" x="0.00" y="0" width="168.82" height="8" fill="#A97BFF"/>
+    <rect mask="url(#rect-mask)" x="168.82" y="0" width="28.10" height="8" fill="#3572A5"/>
+    <rect mask="url(#rect-mask)" x="196.92" y="0" width="23.51" height="8" fill="#f34b7d"/>
+    <rect mask="url(#rect-mask)" x="220.43" y="0" width="11.78" height="8" fill="#3178c6"/>
+    <rect mask="url(#rect-mask)" x="232.21" y="0" width="10.65" height="8" fill="#41b883"/>
+    <rect mask="url(#rect-mask)" x="242.86" y="0" width="10.00" height="8" fill="#00B4AB"/>
+    <g transform="translate(25, 25)">
+      <g transform="translate(0, 0)">
+        <g transform="translate(0, 0)">
+          <circle cx="5" cy="6" r="5" fill="#A97BFF"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Kotlin 67.53%</text>
+        </g>
+        <g transform="translate(0, 25)">
+          <circle cx="5" cy="6" r="5" fill="#3572A5"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Python 11.24%</text>
+        </g>
+        <g transform="translate(0, 50)">
+          <circle cx="5" cy="6" r="5" fill="#f34b7d"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">C++ 9.40%</text>
+        </g>
+      </g>
+      <g transform="translate(150, 0)">
+        <g transform="translate(0, 0)">
+          <circle cx="5" cy="6" r="5" fill="#3178c6"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">TypeScript 4.71%</text>
+        </g>
+        <g transform="translate(0, 25)">
+          <circle cx="5" cy="6" r="5" fill="#41b883"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Vue 4.26%</text>
+        </g>
+        <g transform="translate(0, 50)">
+          <circle cx="5" cy="6" r="5" fill="#00B4AB"/>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Dart 2.86%</text>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
