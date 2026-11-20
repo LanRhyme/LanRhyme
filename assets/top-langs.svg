@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" fill="none" role="img" aria-label="Most Used Languages">
+  <title>Most Used Languages</title>
+  <rect x="0.5" y="0.5" width="494" height="194" rx="12" ry="12" fill="#0d1117" stroke="#4a5a35" stroke-opacity="0.35"/>
+  <text x="25" y="35" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="18" font-weight="600" fill="#8a9a70">Most Used Languages</text>
+  <line x1="25" y1="48" x2="470" y2="48" stroke="#4a5a35" stroke-opacity="0.5" stroke-width="1"/>
+  <circle cx="30" cy="68" r="5" fill="#A97BFF"/>
+  <text x="45" y="72" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Kotlin</text>
+  <text x="470" y="72" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">60.66%</text>
+  <circle cx="30" cy="91" r="5" fill="#3572A5"/>
+  <text x="45" y="95" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Python</text>
+  <text x="470" y="95" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">10.10%</text>
+  <circle cx="30" cy="114" r="5" fill="#f34b7d"/>
+  <text x="45" y="118" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">C++</text>
+  <text x="470" y="118" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">8.45%</text>
+  <circle cx="30" cy="137" r="5" fill="#3178c6"/>
+  <text x="45" y="141" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">TypeScript</text>
+  <text x="470" y="141" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">4.23%</text>
+  <circle cx="30" cy="160" r="5" fill="#41b883"/>
+  <text x="45" y="164" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Vue</text>
+  <text x="470" y="164" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">3.83%</text>
+  <circle cx="30" cy="183" r="5" fill="#00B4AB"/>
+  <text x="45" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="400" fill="#e8f0d8" fill-opacity="0.92">Dart</text>
+  <text x="470" y="187" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'" font-size="13" font-weight="600" fill="#e8f0d8" text-anchor="end">2.57%</text>
+</svg>

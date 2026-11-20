@@ -1,0 +1,41 @@
+name: Cards
+
+on:
+  schedule: [{cron: "12 4 * * *"}]
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/gen-cards.py
+      - .github/workflows/cards.yml
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: LanRhyme
+        run: python3 scripts/gen-cards.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg assets/top-langs.svg
+          if git diff --cached --quiet; then
+            echo "卡片无变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore: 更新统计卡片 SVG"
+          git push

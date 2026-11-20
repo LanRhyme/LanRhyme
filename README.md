@@ -62,8 +62,8 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=LanRhyme&show_icons=true&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&icon_color=6b7e4f&border_radius=12&count_private=true" height="170">
-<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=LanRhyme&layout=compact&theme=gruvbox&hide_border=true&bg_color=0d1117&title_color=8a9a70&text_color=e8f0d8&langs_count=6&border_radius=12" height="170">
+<img src="./assets/stats.svg" height="170" alt="GitHub Stats">
+<img src="./assets/top-langs.svg" height="170" alt="Top Languages">
 
 <br>
 
