@@ -13,7 +13,7 @@
   <rect x="0.5" y="0.5" rx="12" width="494" height="193" fill="#0d1117" stroke="#e4e2e2" stroke-opacity="0"/>
     <line x1="165" y1="28" x2="165" y2="170" stroke="#4a5a35" stroke-width="1"/>
     <line x1="330" y1="28" x2="330" y2="170" stroke="#4a5a35" stroke-width="1"/>
-    <text x="82.5" y="80" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="28" font-weight="700" fill="#6b7e4f" text-anchor="middle">6,477</text>
+    <text x="82.5" y="80" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="28" font-weight="700" fill="#6b7e4f" text-anchor="middle">6,478</text>
     <text x="82.5" y="116" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="400" fill="#e8f0d8" text-anchor="middle">Total Contributions</text>
     <text x="82.5" y="146" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12" font-weight="400" fill="#e8f0d8" text-anchor="middle">Since Sep 14, 2022</text>
     <g mask="url(#mask_out_ring_behind_fire)">
