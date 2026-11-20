@@ -34,7 +34,7 @@ RING = "#4a5a35"
 FONT = ("-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,"
         "sans-serif,'Apple Color Emoji','Segoe UI Emoji'")
 
-CARD_W = 495
+CARD_W = 467
 CARD_H = 195
 PAD = 25
 RADIUS = 12
