@@ -62,8 +62,7 @@
 
 <div align="center">
 
-<img src="./assets/stats.svg" height="170" alt="GitHub Stats">
-<img src="./assets/top-langs.svg" height="170" alt="Top Languages">
+<img src="./assets/stats.svg" height="170" alt="GitHub Stats">&nbsp;&nbsp;&nbsp;<img src="./assets/top-langs.svg" height="170" alt="Top Languages">
 
 <br>
 
