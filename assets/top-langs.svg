@@ -8,39 +8,39 @@
     <mask id="rect-mask">
       <rect x="0" y="0" width="250" height="8" fill="white" rx="5"/>
     </mask>
-    <rect mask="url(#rect-mask)" x="0.00" y="0" width="171.24" height="8" fill="#A97BFF"/>
-    <rect mask="url(#rect-mask)" x="171.24" y="0" width="26.22" height="8" fill="#f34b7d"/>
-    <rect mask="url(#rect-mask)" x="197.46" y="0" width="25.75" height="8" fill="#3572A5"/>
-    <rect mask="url(#rect-mask)" x="223.21" y="0" width="10.67" height="8" fill="#3178c6"/>
-    <rect mask="url(#rect-mask)" x="233.88" y="0" width="10.00" height="8" fill="#41b883"/>
-    <rect mask="url(#rect-mask)" x="243.53" y="0" width="10.00" height="8" fill="#00B4AB"/>
+    <rect mask="url(#rect-mask)" x="0.00" y="0" width="171.70" height="8" fill="#A97BFF"/>
+    <rect mask="url(#rect-mask)" x="171.70" y="0" width="26.09" height="8" fill="#f34b7d"/>
+    <rect mask="url(#rect-mask)" x="197.79" y="0" width="25.62" height="8" fill="#3572A5"/>
+    <rect mask="url(#rect-mask)" x="223.41" y="0" width="10.62" height="8" fill="#3178c6"/>
+    <rect mask="url(#rect-mask)" x="234.03" y="0" width="10.00" height="8" fill="#41b883"/>
+    <rect mask="url(#rect-mask)" x="243.57" y="0" width="10.00" height="8" fill="#00B4AB"/>
     <g transform="translate(25, 25)">
       <g transform="translate(0, 0)">
         <g transform="translate(0, 0)">
           <circle cx="5" cy="6" r="5" fill="#A97BFF"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Kotlin 68.50%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Kotlin 68.68%</text>
         </g>
         <g transform="translate(0, 25)">
           <circle cx="5" cy="6" r="5" fill="#f34b7d"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">C++ 10.49%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">C++ 10.43%</text>
         </g>
         <g transform="translate(0, 50)">
           <circle cx="5" cy="6" r="5" fill="#3572A5"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Python 10.30%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Python 10.25%</text>
         </g>
       </g>
       <g transform="translate(150, 0)">
         <g transform="translate(0, 0)">
           <circle cx="5" cy="6" r="5" fill="#3178c6"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">TypeScript 4.27%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">TypeScript 4.25%</text>
         </g>
         <g transform="translate(0, 25)">
           <circle cx="5" cy="6" r="5" fill="#41b883"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Vue 3.86%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Vue 3.81%</text>
         </g>
         <g transform="translate(0, 50)">
           <circle cx="5" cy="6" r="5" fill="#00B4AB"/>
-          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Dart 2.59%</text>
+          <text x="15" y="10" font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif" font-size="11" font-weight="400" fill="#e8f0d8">Dart 2.57%</text>
         </g>
       </g>
     </g>
